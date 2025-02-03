@@ -32,8 +32,8 @@ router.get("/teams/:id", async (req, res) => {
 router.post("/teams", async (req, res) => {
     try {
         let team = {
-            name: req.body.name,
-            position: req.body.manager
+            managerName: req.body.managerName,
+            teamName: req.body.teamName
         };
         let collection = await db.collection("teams");
         let result = await collection.insertOne(team);
